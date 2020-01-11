@@ -1,0 +1,80 @@
+body {
+ 
+ 
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  h3{
+    margin-top: 50px;
+    
+  }
+  
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+ 
+
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+
+  }
+
+  .jumbotron{
+
+    background-color: #343d39;
+    color: #fafffc;
+    font-family: 'Permanent Marker', cursive;
+
+  }
+
+  .container{
+    font-size: 20px;
+    font-family: 'Caveat', cursive;
+  }
+  .currentDay{
+    border: solid 1px lightgray;
+    padding: 30px 0px 25px 0px;
+    
+  }
+
+  #history{
+    margin-top: 25px;
+  }
+
+
+  .fiveDay{
+    padding: 0px 20px 0px 20px;
+  }
+
+  .col-md-2{
+    text-align: center;
+    margin: 15px;
+    background-color: lightskyblue;
+  }
