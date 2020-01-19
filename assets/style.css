@@ -78,3 +78,9 @@ body {
     margin: 15px;
     background-color: lightskyblue;
   }
+
+
+  .recent{
+    border: solid 1px lightgray;
+    text-align: center;
+  }
