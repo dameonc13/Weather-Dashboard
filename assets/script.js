@@ -11,7 +11,7 @@ today = mm + '/' + dd + '/' + yyyy;
 
 $(document).ready(function() {
 
-// When button is clicked it provides detail about city 
+// When button is clicked it provides weather detail about city 
 $("button").on("click", function(event) {
 
     event.preventDefault();
@@ -63,17 +63,14 @@ $.ajax({
   // We store all of the retrieved data inside of an object called "current"
   .then(function(current) {
 
-  
-  
-  
-   
-   
+
+  //appends data retrieved from the api to classes under the main class current Day 
     $(".city").html("<h1>" + current.name + " " +today+ "<img src='http://openweathermap.org/img/w/"+current.weather[0].icon+".png'>" + current.weather[0].description);
     $(".temp").html("Temperature (F): " + current.main.temp + "&deg;F");
     $(".humidity").html("Humidity: " + current.main.humidity+"%");
     $(".wind").html("Wind Speed: " + current.wind.speed + " MPH");
     
-    console.log("hi");
+  
 
   
   });
@@ -89,34 +86,36 @@ function fiveDayForecast(nextUrl){
   })
 
 
- // We store all of the retrieved data inside of an object called "fiveday"
-  .then(function(fiveday) {
+ // We store all of the retrieved data inside of an object called "fiveDay"
+  .then(function(fiveDay) {
     
     
 
-   
-  var day1temp = (fiveday.list[0].main.temp) ;
-  var day1humid = (fiveday.list[0].main.humidity);
-  var day1time =  (fiveday.list[0].dt_txt)
-  var day2temp = (fiveday.list[8].main.temp) ;
-  var day2humid = (fiveday.list[8].main.humidity);
-  var day2time =  (fiveday.list[8].dt_txt)
-  var day3temp = (fiveday.list[16].main.temp) ;
-  var day3humid = (fiveday.list[16].main.humidity);
-  var day3time =  (fiveday.list[16].dt_txt)
-  var day4temp = (fiveday.list[24].main.temp) ;
-  var day4humid = (fiveday.list[24].main.humidity);
-  var day4time =  (fiveday.list[24].dt_txt)
-  var day5temp = (fiveday.list[32].main.temp) ;
-  var day5humid = (fiveday.list[32].main.humidity);
-  var day5time =  (fiveday.list[32].dt_txt)
+   //create variables for data retreived from api for five day forecast  
+  var day1temp = (fiveDay.list[0].main.temp) ;
+  var day1humid = (fiveDay.list[0].main.humidity);
+  var day1time =  (fiveDay.list[0].dt_txt)
+  var day2temp = (fiveDay.list[8].main.temp) ;
+  var day2humid = (fiveDay.list[8].main.humidity);
+  var day2time =  (fiveDay.list[8].dt_txt)
+  var day3temp = (fiveDay.list[16].main.temp) ;
+  var day3humid = (fiveDay.list[16].main.humidity);
+  var day3time =  (fiveDay.list[16].dt_txt)
+  var day4temp = (fiveDay.list[24].main.temp) ;
+  var day4humid = (fiveDay.list[24].main.humidity);
+  var day4time =  (fiveDay.list[24].dt_txt)
+  var day5temp = (fiveDay.list[32].main.temp) ;
+  var day5humid = (fiveDay.list[32].main.humidity);
+  var day5time =  (fiveDay.list[32].dt_txt)
+
+  //appends the data retrieved for five day to classes that fall under the main class fiveDay
   $("h3").text("Five Day Forecast:")
-  $(".day1").html( day1time.substring(0,11) + "<img src='http://openweathermap.org/img/w/"+fiveday.list[0].weather[0].icon+".png'>" +  " Temp(F): " + day1temp +"&deg;F" + "\n Humidity: "  + day1humid +"%" );
-  $(".day2").html( day2time.substring(0,11) + "<img src='http://openweathermap.org/img/w/"+fiveday.list[8].weather[0].icon+".png'>" +  " Temp(F): " + day2temp +"&deg;F"+ "\n Humidity: " + day2humid +"%");
-  $(".day3").html(day3time.substring(0,11) + "<img src='http://openweathermap.org/img/w/"+fiveday.list[16].weather[0].icon+".png'>" + " Temp(F): " + day3temp +"&deg;F"+ "\n Humidity: "  + day3humid +"%" );
-  $(".day4").html(day4time.substring(0,11)+ "<img src='http://openweathermap.org/img/w/"+fiveday.list[24].weather[0].icon+".png'>" +  " Temp(F): " + day4temp + "&deg;F" +"\n Humidity: "  + day4humid +"%");
-  $(".day5").html(day5time.substring(0,11) + "<img src='http://openweathermap.org/img/w/"+fiveday.list[32].weather[0].icon+".png'>" + " Temp(F): " + day5temp +"&deg;F" + "\n Humidity: "  + day5humid +"%");
-   console.log("hi");
+  $(".day1").html( day1time.substring(0,11) + "<img src='http://openweathermap.org/img/w/"+fiveDay.list[0].weather[0].icon+".png'>" +  " Temp(F): " + day1temp +"&deg;F" + "\n Humidity: "  + day1humid +"%" );
+  $(".day2").html( day2time.substring(0,11) + "<img src='http://openweathermap.org/img/w/"+fiveDay.list[8].weather[0].icon+".png'>" +  " Temp(F): " + day2temp +"&deg;F"+ "\n Humidity: " + day2humid +"%");
+  $(".day3").html(day3time.substring(0,11) + "<img src='http://openweathermap.org/img/w/"+fiveDay.list[16].weather[0].icon+".png'>" + " Temp(F): " + day3temp +"&deg;F"+ "\n Humidity: "  + day3humid +"%" );
+  $(".day4").html(day4time.substring(0,11)+ "<img src='http://openweathermap.org/img/w/"+fiveDay.list[24].weather[0].icon+".png'>" +  " Temp(F): " + day4temp + "&deg;F" +"\n Humidity: "  + day4humid +"%");
+  $(".day5").html(day5time.substring(0,11) + "<img src='http://openweathermap.org/img/w/"+fiveDay.list[32].weather[0].icon+".png'>" + " Temp(F): " + day5temp +"&deg;F" + "\n Humidity: "  + day5humid +"%");
+ 
 
   })
 
