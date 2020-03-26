@@ -55,6 +55,7 @@ $("#history").prepend(recentsearch)
 
 // this function return current weather info on user input
 function currentForecast(queryURL){
+  $(".city").empty()
 // Here we run our AJAX call to the OpenWeatherMap API
 $.ajax({
   url: queryURL,
