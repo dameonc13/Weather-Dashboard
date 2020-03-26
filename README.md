@@ -1,6 +1,6 @@
 # Weather-Dashboard
 
-With this application you will be able to get latest weather for any city in United States
+With this application you will be able to get the latest weather for any city in the United States
 
 
 
